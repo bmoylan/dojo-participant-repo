@@ -42,7 +42,7 @@ public class ExtremeStartup extends HttpServlet {
                     .toString();
         }
 
-        return "DontCare";
+        return "Don't Care";
     }
 
 }
