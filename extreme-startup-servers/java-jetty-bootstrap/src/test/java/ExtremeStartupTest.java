@@ -72,4 +72,9 @@ public class ExtremeStartupTest {
     public void prime2() {
         assertThat(server.answer("a1bf7350: which of the following numbers are primes: 1, 2, 4"), equalTo("2"));
     }
+
+    @Test
+    public void banana() {
+        assertThat(server.answer("51132ca0: what colour is a banana"), equalTo("Yellow"));
+    }
 }
