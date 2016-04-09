@@ -11,5 +11,6 @@ public class ExtremeMatchers {
     public static Pattern largestPattern = Pattern.compile(".*which of the following numbers is the largest: ([ (\\d+),?]+)");
     public static Pattern squareAndCube = Pattern.compile(".*which of the following numbers is both a square and a cube: ([ (\\d+),?]+)");
     public static Pattern multiplyPattern = Pattern.compile(".*what is (\\d+) multiplied by (\\d+)");
+    public static Pattern fibbPattern = Pattern.compile(".*what is the (\\d+).. number in the Fibonacci sequence");
 
 }

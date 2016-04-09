@@ -1,3 +1,5 @@
+import static sun.jvm.hotspot.HelloWorld.fib;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.regex.Matcher;
@@ -60,6 +62,10 @@ public class ExtremeStartup extends HttpServlet {
         if (multMatcher.matches()) {
             return String.valueOf(Integer.parseInt(multMatcher.group(1))
                     * Integer.parseInt(multMatcher.group(2)));
+        }
+        Matcher fibbMatcher = ExtremeMatchers.fibbPattern.matcher(parameter);
+        if (fibbMatcher.matches()) {
+            return String.valueOf(fib(Integer.parseInt(fibbMatcher.group(1))));
         }
 
         if (parameter.matches(".*which city is the Eiffel tower in")) return "Paris";
