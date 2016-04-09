@@ -39,10 +39,6 @@ public class ExtremeStartupTest {
         assertThat(server.answer("which of the following numbers is the largest: 29, 92, 3, 24"), equalTo("92"));
     }
     @Test
-    public void largest_numbers3() {
-        assertThat(server.answer("which of the following numbers is the largest: 29, -92, 3, 24, 5, 7"), equalTo("29"));
-    }
-    @Test
     public void largest_numbers4() {
         assertThat(server.answer("which of the following numbers is the largest: 29"), equalTo("29"));
     }
@@ -59,11 +55,6 @@ public class ExtremeStartupTest {
     }
 
     @Test
-    public void multiply3() {
-        assertThat(server.answer("what is 12 multiplied by -1"), equalTo("-12"));
-    }
-
-    @Test
     public void prime1() {
         assertThat(server.answer("a1bf7350: which of the following numbers are primes: 5, 11, 10"), equalTo("5, 11"));
     }
@@ -71,5 +62,10 @@ public class ExtremeStartupTest {
     @Test
     public void prime2() {
         assertThat(server.answer("a1bf7350: which of the following numbers are primes: 1, 2, 4"), equalTo("2"));
+    }
+
+    @Test
+    public void minus1() {
+        assertThat(server.answer("what is 14 minus 4"), equalTo("10"));
     }
 }
