@@ -35,6 +35,11 @@ public class ExtremeStartup extends HttpServlet {
             return String.valueOf(Integer.parseInt(plusMatcher.group(1))
                     + Integer.parseInt(plusMatcher.group(2)));
         }
+        Matcher minusMatcher = ExtremeMatchers.minusPattern.matcher(parameter);
+        if (minusMatcher.matches()) {
+            return String.valueOf(Integer.parseInt(minusMatcher.group(1))
+                    - Integer.parseInt(minusMatcher.group(2)));
+        }
         Matcher largestMatcher = ExtremeMatchers.largestPattern.matcher(parameter);
         if (largestMatcher.matches()) {
             return Arrays.stream(largestMatcher.group(1).split(","))
@@ -67,6 +72,15 @@ public class ExtremeStartup extends HttpServlet {
         if (fibbMatcher.matches()) {
             return String.valueOf(fib(Integer.parseInt(fibbMatcher.group(1))));
         }
+        Matcher primeMatcher = ExtremeMatchers.primePattern.matcher(parameter);
+        if (primeMatcher.matches()) {
+            String asnwer = Arrays.toString(Arrays.stream(primeMatcher.group(1).split(","))
+                    .map(String::trim)
+                    .map(Integer::valueOf)
+                    .filter(Utils::isPrime)
+                    .toArray());
+            return asnwer.substring(1, asnwer.length()-1);
+        }
 
         if (parameter.matches(".*which city is the Eiffel tower in")) return "Paris";
         if (parameter.matches(".*who played James Bond in the film Dr No")) return "Sean Connery";
@@ -74,5 +88,7 @@ public class ExtremeStartup extends HttpServlet {
 
         return "didn't find a match";
     }
+
+
 
 }
