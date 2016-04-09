@@ -21,7 +21,7 @@ public class ExtremeStartup extends HttpServlet {
 
     String answer(String parameter) {
         if (parameter == null)
-            return "team name";
+            return "Don't Care";
 
         Matcher sumMatcher = ExtremeMatchers.sumPattern.matcher(parameter);
         if (sumMatcher.matches()) {
