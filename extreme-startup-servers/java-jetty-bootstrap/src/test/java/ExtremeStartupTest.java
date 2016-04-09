@@ -62,4 +62,14 @@ public class ExtremeStartupTest {
     public void multiply3() {
         assertThat(server.answer("what is 12 multiplied by -1"), equalTo("-12"));
     }
+
+    @Test
+    public void prime1() {
+        assertThat(server.answer("a1bf7350: which of the following numbers are primes: 5, 11, 10"), equalTo("5, 11"));
+    }
+
+    @Test
+    public void prime2() {
+        assertThat(server.answer("a1bf7350: which of the following numbers are primes: 1, 2, 4"), equalTo("2"));
+    }
 }
