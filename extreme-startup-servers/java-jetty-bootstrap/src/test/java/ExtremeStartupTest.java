@@ -83,4 +83,9 @@ public class ExtremeStartupTest {
     public void fibb1() {
         assertThat(server.answer("what is the 3rd number in the Fibonacci sequence"), equalTo("2"));
     }
+
+    @Test
+    public void power1() {
+        assertThat(server.answer("what is 2 to the power of 4"), equalTo("16"));
+    }
 }

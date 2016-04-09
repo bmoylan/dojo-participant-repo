@@ -15,5 +15,6 @@ public class ExtremeMatchers {
     public static Pattern fibbPattern = Pattern.compile(".*what is the (\\d+).. number in the Fibonacci sequence");
     public static Pattern primePattern = Pattern.compile(".*which of the following numbers are primes: ([ (\\d+),?]+)");
     public static Pattern plusPlusPattern = Pattern.compile(".*what is (\\d+) plus (\\d+) plus (\\d+)");
+    public static Pattern powerPattern = Pattern.compile(".*what is (\\d+) to the power of (\\d+)");
 
 }
