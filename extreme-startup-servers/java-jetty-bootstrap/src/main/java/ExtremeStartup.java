@@ -41,6 +41,11 @@ public class ExtremeStartup extends HttpServlet {
                     .reduce(Integer::max).get()
                     .toString();
         }
+        Matcher multMatcher = ExtremeMatchers.multiplyPattern.matcher(parameter);
+        if (multMatcher.matches()) {
+            return String.valueOf(Integer.parseInt(multMatcher.group(1))
+                    * Integer.parseInt(multMatcher.group(2)));
+        }
 
         return "Don't Care";
     }

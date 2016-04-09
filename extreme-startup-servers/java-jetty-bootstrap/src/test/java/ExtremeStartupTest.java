@@ -30,15 +30,15 @@ public class ExtremeStartupTest {
 
     @Test
     public void largest_numbers2() {
-        assertThat(server.answer("which of the following numbers is the largest: 29, 92, 3, 24"), equalTo(92));
+        assertThat(server.answer("which of the following numbers is the largest: 29, 92, 3, 24"), equalTo("92"));
     }
     @Test
     public void largest_numbers3() {
-        assertThat(server.answer("which of the following numbers is the largest: 29, -92, 3, 24, 5, 7"), equalTo(29));
+        assertThat(server.answer("which of the following numbers is the largest: 29, -92, 3, 24, 5, 7"), equalTo("29"));
     }
     @Test
     public void largest_numbers4() {
-        assertThat(server.answer("which of the following numbers is the largest: 29"), equalTo(29));
+        assertThat(server.answer("which of the following numbers is the largest: 29"), equalTo("29"));
     }
 
 
