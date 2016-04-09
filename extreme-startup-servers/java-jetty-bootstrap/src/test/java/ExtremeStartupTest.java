@@ -65,6 +65,9 @@ public class ExtremeStartupTest {
     }
 
     @Test
+    public void banana() {
+        assertThat(server.answer("51132ca0: what colour is a banana"), equalTo("Yellow"));
+    }
     public void minus1() {
         assertThat(server.answer("what is 14 minus 4"), equalTo("10"));
     }

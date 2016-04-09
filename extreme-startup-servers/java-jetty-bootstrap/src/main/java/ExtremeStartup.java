@@ -85,6 +85,7 @@ public class ExtremeStartup extends HttpServlet {
         if (parameter.matches(".*which city is the Eiffel tower in")) return "Paris";
         if (parameter.matches(".*who played James Bond in the film Dr No")) return "Sean Connery";
         if (parameter.matches(".*who is the Prime Minister of Great Britain")) return "David Cameron";
+        if (parameter.matches(".*what colour is a banana")) return "Yellow";
 
         return "didn't find a match";
     }
