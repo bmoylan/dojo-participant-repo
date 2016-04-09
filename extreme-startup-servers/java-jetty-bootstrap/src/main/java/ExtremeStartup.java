@@ -56,6 +56,15 @@ public class ExtremeStartup extends HttpServlet {
                     }).toArray());
             return answer.substring(1, answer.length()-1);
         }
+        Matcher multMatcher = ExtremeMatchers.multiplyPattern.matcher(parameter);
+        if (multMatcher.matches()) {
+            return String.valueOf(Integer.parseInt(multMatcher.group(1))
+                    * Integer.parseInt(multMatcher.group(2)));
+        }
+
+        if (parameter.matches(".*which city is the Eiffel tower in")) return "Paris";
+        if (parameter.matches(".*who played James Bond in the film Dr No")) return "Sean Connery";
+        if (parameter.matches(".*who is the Prime Minister of Great Britain")) return "David Cameron";
 
         return "didn't find a match";
     }
