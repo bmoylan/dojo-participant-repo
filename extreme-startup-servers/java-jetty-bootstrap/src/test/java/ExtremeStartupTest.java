@@ -16,4 +16,9 @@ public class ExtremeStartupTest {
     public void should_add_numbers() {
         assertThat(server.answer("what is the sum of 14 and 4"), equalTo("18"));
     }
+
+    @Test
+    public void largest_numbers() {
+        assertThat(server.answer("which of the following numbers is the largest: 29, 92, 123, 24"), equalTo(123));
+    }
 }
