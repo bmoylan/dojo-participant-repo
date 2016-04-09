@@ -41,8 +41,23 @@ public class ExtremeStartup extends HttpServlet {
                     .reduce(Integer::max).get()
                     .toString();
         }
+        Matcher squarecubeMatcher = ExtremeMatchers.squareAndCube.matcher(parameter);
+        if (squarecubeMatcher.matches()) {
+            String answer = Arrays.toString(Arrays.stream(squarecubeMatcher.group(1).split(","))
+                    .map(String::trim)
+                    .map(Integer::valueOf)
+                    .filter((val) -> {
+                        double sqrt = Math.sqrt(val);
+                        return (sqrt % 1) == 0;
+                    })
+                    .filter((val) -> {
+                        double cuberoot = Math.pow(val, -3);
+                        return (cuberoot % 1) == 0;
+                    }).toArray());
+            return answer.substring(1, answer.length()-1);
+        }
 
-        return "Don't Care";
+        return "didn't find a match";
     }
 
 }
