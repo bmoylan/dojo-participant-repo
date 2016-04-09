@@ -70,7 +70,7 @@ public class ExtremeStartup extends HttpServlet {
         }
         Matcher fibbMatcher = ExtremeMatchers.fibbPattern.matcher(parameter);
         if (fibbMatcher.matches()) {
-            return String.valueOf(fib(Integer.parseInt(fibbMatcher.group(1))));
+            return String.valueOf(fib(Integer.parseInt(fibbMatcher.group(1)) - 1));
         }
         Matcher primeMatcher = ExtremeMatchers.primePattern.matcher(parameter);
         if (primeMatcher.matches()) {

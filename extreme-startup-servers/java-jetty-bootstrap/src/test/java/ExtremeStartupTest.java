@@ -68,7 +68,14 @@ public class ExtremeStartupTest {
     public void banana() {
         assertThat(server.answer("51132ca0: what colour is a banana"), equalTo("Yellow"));
     }
+
+    @Test
     public void minus1() {
         assertThat(server.answer("what is 14 minus 4"), equalTo("10"));
+    }
+
+    @Test
+    public void fibb1() {
+        assertThat(server.answer("what is the 3rd number in the Fibonacci sequence"), equalTo("2"));
     }
 }
