@@ -35,6 +35,12 @@ public class ExtremeStartup extends HttpServlet {
             return String.valueOf(Integer.parseInt(plusMatcher.group(1))
                     + Integer.parseInt(plusMatcher.group(2)));
         }
+        Matcher plusPlusMatcher = ExtremeMatchers.plusPlusPattern.matcher(parameter);
+        if (plusPlusMatcher.matches()) {
+            return String.valueOf(Integer.parseInt(plusPlusMatcher.group(1))
+                    + Integer.parseInt(plusPlusMatcher.group(2))
+                    + Integer.parseInt(plusPlusMatcher.group(3)));
+        }
         Matcher minusMatcher = ExtremeMatchers.minusPattern.matcher(parameter);
         if (minusMatcher.matches()) {
             return String.valueOf(Integer.parseInt(minusMatcher.group(1))
