@@ -8,6 +8,7 @@ public class ExtremeMatchers {
 
     public static Pattern sumPattern = Pattern.compile(".*what is the sum of (\\d+) and (\\d+)");
     public static Pattern plusPattern = Pattern.compile(".*what is (\\d+) plus (\\d+)");
+    public static Pattern minusPattern = Pattern.compile(".*what is (\\d+) minus (\\d+)");
     public static Pattern largestPattern = Pattern.compile(".*which of the following numbers is the largest: ([ (\\d+),?]+)");
     public static Pattern squareAndCube = Pattern.compile(".*which of the following numbers is both a square and a cube: ([ (\\d+),?]+)");
     public static Pattern multiplyPattern = Pattern.compile(".*what is (\\d+) multiplied by (\\d+)");

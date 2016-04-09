@@ -33,6 +33,11 @@ public class ExtremeStartup extends HttpServlet {
             return String.valueOf(Integer.parseInt(plusMatcher.group(1))
                     + Integer.parseInt(plusMatcher.group(2)));
         }
+        Matcher minusMatcher = ExtremeMatchers.minusPattern.matcher(parameter);
+        if (minusMatcher.matches()) {
+            return String.valueOf(Integer.parseInt(minusMatcher.group(1))
+                    - Integer.parseInt(minusMatcher.group(2)));
+        }
         Matcher largestMatcher = ExtremeMatchers.largestPattern.matcher(parameter);
         if (largestMatcher.matches()) {
             return Arrays.stream(largestMatcher.group(1).split(","))
