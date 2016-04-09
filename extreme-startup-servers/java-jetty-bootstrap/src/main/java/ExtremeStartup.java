@@ -23,13 +23,23 @@ public class ExtremeStartup extends HttpServlet {
         if (parameter == null)
             return "team name";
 
-        Matcher additionMatcher = Pattern.compile(".*what is the sum of (\\d+) and (\\d+)").matcher(parameter);
-        if (additionMatcher.matches()) {
-            return String.valueOf(Integer.parseInt(additionMatcher.group(1))
-                    + Integer.parseInt(additionMatcher.group(2)));
+        Matcher sumMatcher = ExtremeMatchers.sumPattern.matcher(parameter);
+        if (sumMatcher.matches()) {
+            return String.valueOf(Integer.parseInt(sumMatcher.group(1))
+                    + Integer.parseInt(sumMatcher.group(2)));
         }
+        Matcher plusMatcher = ExtremeMatchers.plusPattern.matcher(parameter);
+        if (plusMatcher.matches()) {
+            return String.valueOf(Integer.parseInt(plusMatcher.group(1))
+                    + Integer.parseInt(plusMatcher.group(2)));
+        }
+//        Matcher largestMatcher = ExtremeMatchers.largestPattern.matcher(parameter);
+//        if (additionMatcher.matches()) {
+//            return String.valueOf(Integer.parseInt(additionMatcher.group(1))
+//                    + Integer.parseInt(additionMatcher.group(2)));
+//        }
 
-        return "team name";
+        return "DontCare";
     }
 
 }
