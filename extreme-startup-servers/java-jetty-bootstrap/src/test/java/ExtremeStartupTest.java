@@ -39,4 +39,20 @@ public class ExtremeStartupTest {
     public void largest_numbers4() {
         assertThat(server.answer("which of the following numbers is the largest: 29"), equalTo(29));
     }
+
+
+    @Test
+    public void multiply1() {
+        assertThat(server.answer("what is 12 multiplied by 1"), equalTo("12"));
+    }
+
+    @Test
+    public void multiply2() {
+        assertThat(server.answer("what is 12 multiplied by 2"), equalTo("24"));
+    }
+
+    @Test
+    public void multiply3() {
+        assertThat(server.answer("what is 12 multiplied by -1"), equalTo("-12"));
+    }
 }
