@@ -1,5 +1,6 @@
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
+
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
@@ -9,7 +10,7 @@ public class ExtremeStartupTest {
 
     @Test
     public void should_accept_missing_input() {
-        assertThat(server.answer(null), equalTo("team name"));
+        assertThat(server.answer(null), equalTo("Don't Care"));
     }
 
     @Test
@@ -23,8 +24,8 @@ public class ExtremeStartupTest {
     }
 
     @Test
-    public void largest_numbers1() {
-        assertThat(server.answer("which of the following numbers is the largest: 29, 92, 123, 24"), equalTo(123));
+    public void largest_numbers() {
+        assertThat(server.answer("which of the following numbers is the largest: 29, 92, 123, 24"), equalTo("123"));
     }
 
     @Test

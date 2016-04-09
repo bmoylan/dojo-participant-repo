@@ -1,6 +1,6 @@
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -33,11 +33,14 @@ public class ExtremeStartup extends HttpServlet {
             return String.valueOf(Integer.parseInt(plusMatcher.group(1))
                     + Integer.parseInt(plusMatcher.group(2)));
         }
-//        Matcher largestMatcher = ExtremeMatchers.largestPattern.matcher(parameter);
-//        if (additionMatcher.matches()) {
-//            return String.valueOf(Integer.parseInt(additionMatcher.group(1))
-//                    + Integer.parseInt(additionMatcher.group(2)));
-//        }
+        Matcher largestMatcher = ExtremeMatchers.largestPattern.matcher(parameter);
+        if (largestMatcher.matches()) {
+            return Arrays.stream(largestMatcher.group(1).split(","))
+                    .map(String::trim)
+                    .map(Integer::valueOf)
+                    .reduce(Integer::max).get()
+                    .toString();
+        }
 
         return "DontCare";
     }
